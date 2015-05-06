@@ -43,15 +43,8 @@ def get_data():
     prfb=re.findall(compfb,fbtext)
     prpa=re.findall(comppa,patext)
 
-    spis1=[prap,prmic,prson,prba,prgo,prfb,prpa]
+    spis1=[prap[0],prmic[0],prson[0],prba[0],prgo[0],prfb[0],prpa[0]]
     spis2=["Apple","Microsoft","Sony","Barnes","Google","Facebook","Pandora"]
-
-
-    '''for w in spis1:
-        w=[l.replace("'[","") for l in w]
-        w=[l.replace("]'","") for l in w]
-        return spis1'''
-
 
     i=0
     while i<len(spis1):
@@ -59,9 +52,6 @@ def get_data():
         data.append(a)
         i+=1
     return data
-
-print get_data()
-
 
 def save_data(data):
     with open("data.tsv","w") as csvfile:   #csv save to file
